@@ -154,10 +154,7 @@ own interpreter, but also for any others that share the same thread. This is
 transparent for the code though because an event handler is invoked within the 
 context of the correct interpreter (and in the correct Python lexical context if 
 the handler has a Python payload). There's also no harm in trying to run an 
-event loop for two interpreters that may happen to share a queue: in threaded 
-Tcl, such a clash is flat-out impossible because they would have to both run in 
-the same OS thread, and in non-threaded Tcl, they would take turns processing 
-events. 
+event loop for two interpreters that may happen to share a queue.
 
 
 
