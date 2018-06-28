@@ -4,7 +4,8 @@
 
 import unittest
 from test.support import requires
-from tkinter import Tk, Frame  ##, BooleanVar, StringVar
+from tkinter import Tk  ##, BooleanVar, StringVar
+from tkinter.ttk import Frame
 from idlelib import searchengine as se
 from idlelib import searchbase as sdb
 from idlelib.idle_test.mock_idle import Func
@@ -48,9 +49,9 @@ class SearchDialogBaseTest(unittest.TestCase):
         # Since text parameter of .open is not used in base class,
         # pass dummy 'text' instead of tk.Text().
         self.dialog.open('text')
-        self.assertEqual(self.dialog.top.state(), 'normal')
+        self.assertEqual(self.dialog.win.state(), 'normal')
         self.dialog.close()
-        self.assertEqual(self.dialog.top.state(), 'withdrawn')
+        self.assertEqual(self.dialog.win.state(), 'withdrawn')
 
         self.dialog.open('text', searchphrase="hello")
         self.assertEqual(self.dialog.ent.get(), 'hello')

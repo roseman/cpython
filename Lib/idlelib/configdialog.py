@@ -62,11 +62,12 @@ class ConfigDialog(Toplevel):
         if not _utest:
             self.withdraw()
 
-        self.configure(borderwidth=5)
         self.title(title or 'IDLE Preferences')
         x = parent.winfo_rootx() + 20
         y = parent.winfo_rooty() + (30 if not _htest else 150)
         self.geometry(f'+{x}+{y}')
+        self.top = Frame(self, padding=5)
+        self.top.pack(side=TOP, fill=BOTH)
         # Each theme element key is its display name.
         # The first value of the tuple is the sample area tag name.
         # The second value is the display name list sort index.
@@ -75,6 +76,7 @@ class ConfigDialog(Toplevel):
         self.transient(parent)
         self.protocol("WM_DELETE_WINDOW", self.cancel)
         self.fontpage.fontlist.focus_set()
+        
         # XXX Decide whether to keep or delete these key bindings.
         # Key bindings for this dialog.
         # self.bind('<Escape>', self.Cancel) #dismiss dialog, no save
@@ -104,10 +106,10 @@ class ConfigDialog(Toplevel):
             load_configs: Load pages except for extensions.
             activate_config_changes: Tell editors to reload.
         """
-        self.note = note = Notebook(self)
-        self.highpage = HighPage(note)
+        self.note = note = Notebook(self.top)
+        self.highpage = HighPage(note, self)
         self.fontpage = FontPage(note, self.highpage)
-        self.keyspage = KeysPage(note)
+        self.keyspage = KeysPage(note, self)
         self.genpage = GenPage(note)
         self.extpage = self.create_page_extensions()
         note.add(self.fontpage, text='Fonts/Tabs')
@@ -143,7 +145,7 @@ class ConfigDialog(Toplevel):
             padding_args = {}
         else:
             padding_args = {'padding': (6, 3)}
-        outer = Frame(self, padding=2)
+        outer = Frame(self.top, padding=2)
         buttons = Frame(outer, padding=2)
         for txt, cmd in (
             ('Ok', self.ok),
@@ -674,9 +676,9 @@ class FontPage(Frame):
 
 class HighPage(Frame):
 
-    def __init__(self, master):
+    def __init__(self, master, config_dialog):
         super().__init__(master)
-        self.cd = master.master
+        self.cd = config_dialog
         self.style = Style(master)
         self.create_page_highlight()
         self.load_theme_cfg()
@@ -1326,9 +1328,9 @@ class HighPage(Frame):
 
 class KeysPage(Frame):
 
-    def __init__(self, master):
+    def __init__(self, master, config_dialog):
         super().__init__(master)
-        self.cd = master.master
+        self.cd = config_dialog
         self.create_page_keys()
         self.load_key_cfg()
 

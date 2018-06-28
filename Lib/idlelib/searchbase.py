@@ -1,7 +1,7 @@
 '''Define SearchDialogBase used by Search, Replace, and Grep dialogs.'''
 
-from tkinter import Toplevel, Frame
-from tkinter.ttk import Entry, Label, Button, Checkbutton, Radiobutton
+from tkinter import Toplevel
+from tkinter.ttk import Entry, Label, Button, Checkbutton, Radiobutton, Frame
 
 
 class SearchDialogBase:
@@ -32,6 +32,7 @@ class SearchDialogBase:
     def __init__(self, root, engine):
         '''Initialize root, engine, and top attributes.
 
+        win (toplevel widget): set in create_widgets() called from open().
         top (level widget): set in create_widgets() called from open().
         text (Text searched): set in open(), only used in subclasses().
         ent (ry): created in make_entry() called from create_entry().
@@ -44,15 +45,16 @@ class SearchDialogBase:
         self.root = root
         self.engine = engine
         self.top = None
+        self.win = None
 
     def open(self, text, searchphrase=None):
         "Make dialog visible on top of others and ready to use."
         self.text = text
-        if not self.top:
+        if not self.win:
             self.create_widgets()
         else:
-            self.top.deiconify()
-            self.top.tkraise()
+            self.win.deiconify()
+            self.win.tkraise()
         if searchphrase:
             self.ent.delete(0,"end")
             self.ent.insert("end",searchphrase)
@@ -63,9 +65,9 @@ class SearchDialogBase:
 
     def close(self, event=None):
         "Put dialog away for later use."
-        if self.top:
-            self.top.grab_release()
-            self.top.withdraw()
+        if self.win:
+            self.win.grab_release()
+            self.win.withdraw()
 
     def create_widgets(self):
         '''Create basic 3 row x 3 col search (find) dialog.
@@ -73,14 +75,16 @@ class SearchDialogBase:
         Other dialogs override subsidiary create_x methods as needed.
         Replace and Find-in-Files add another entry row.
         '''
-        top = Toplevel(self.root)
-        top.bind("<Return>", self.default_command)
-        top.bind("<Escape>", self.close)
-        top.protocol("WM_DELETE_WINDOW", self.close)
-        top.wm_title(self.title)
-        top.wm_iconname(self.icon)
-        self.top = top
-        self.bell = top.bell
+        win = Toplevel(self.root)
+        win.bind("<Return>", self.default_command)
+        win.bind("<Escape>", self.close)
+        win.protocol("WM_DELETE_WINDOW", self.close)
+        win.wm_title(self.title)
+        win.wm_iconname(self.icon)
+        self.win = win
+        self.bell = win.bell
+        self.top = Frame(self.win, padding=5)
+        self.top.grid(column=0, row=0, sticky='nwes')
 
         self.row = 0
         self.top.grid_columnconfigure(0, pad=2, weight=0)
