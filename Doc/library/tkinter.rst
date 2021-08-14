@@ -116,44 +116,12 @@ Tix
 Tkinter Modules
 ---------------
 
-Most of the time, :mod:`tkinter` is all you really need, but a number of
-additional modules are available as well.  The Tk interface is located in a
-binary module named :mod:`_tkinter`. This module contains the low-level
-interface to Tk, and should never be used directly by application programmers.
-It is usually a shared library (or DLL), but might in some cases be statically
-linked with the Python interpreter.
-
-In addition to the Tk interface module, :mod:`tkinter` includes a number of
-Python modules, :mod:`tkinter.constants` being one of the most important.
-Importing :mod:`tkinter` will automatically import :mod:`tkinter.constants`,
-so, usually, to use Tkinter all you need is a simple import statement::
-
-   import tkinter
-
-Or, more often::
+Support for Tkinter is spread across several modules. Most applications will need the
+main :mod:`tkinter` module, as well as the :mod:`tkinter.ttk` module, which provides
+the modern themed widget set and API::
 
    from tkinter import *
-
-
-.. class:: Tk(screenName=None, baseName=None, className='Tk', useTk=1)
-
-   The :class:`Tk` class is instantiated without arguments. This creates a toplevel
-   widget of Tk which usually is the main window of an application. Each instance
-   has its own associated Tcl interpreter.
-
-   .. FIXME: The following keyword arguments are currently recognized:
-
-
-.. function:: Tcl(screenName=None, baseName=None, className='Tk', useTk=0)
-
-   The :func:`Tcl` function is a factory function which creates an object much like
-   that created by the :class:`Tk` class, except that it does not initialize the Tk
-   subsystem.  This is most often useful when driving the Tcl interpreter in an
-   environment where one doesn't want to create extraneous toplevel windows, or
-   where one cannot (such as Unix/Linux systems without an X server).  An object
-   created by the :func:`Tcl` object can have a Toplevel window created (and the Tk
-   subsystem initialized) by calling its :meth:`loadtk` method.
-
+   from tkinter import ttk
 
 Other modules that provide Tk support include:
 
@@ -178,9 +146,35 @@ Other modules that provide Tk support include:
 :mod:`tkinter.simpledialog`
    Basic dialogs and convenience functions.
 
+:mod:`tkinter.ttk`
+   Themed widget set introduced in Tk 8.5, providing modern alternatives
+   for many of the classic widgets in the main :mod:`tkinter` module.
+
+Additional modules:
+
+:mod:`_tkinter`
+   A binary module that contains the low-level interface to Tcl/Tk.
+   It is automatically imported by the main :mod:`tkinter` module,
+   and should never be used directly by application programmers.
+   It is usually a shared library (or DLL), but might in some cases be
+   statically linked with the Python interpreter.
+
+:mod:`idlelib`
+   Python's Integrated Development and Learning Environment (IDLE). Based
+   on :mod:`tkinter`.
+
+:mod:`tkinter.constants`
+   Symbolic constants that can be used in place of strings when passing
+   various parameters to Tkinter calls. Automatically imported by the
+   main :mod:`tkinter` module.
+
 :mod:`tkinter.dnd`
-   Drag-and-drop support for :mod:`tkinter`. This is experimental and should
-   become deprecated when it is replaced  with the Tk DND.
+   (experimental) Drag-and-drop support for :mod:`tkinter`. This will
+   become deprecated when it is replaced with the Tk DND.
+
+:mod:`tkinter.tix`
+   (deprecated) An older third-party Tcl/Tk package that adds several new
+   widgets. Better alternatives for most can be found in :mod:`tkinter.ttk`.
 
 :mod:`turtle`
    Turtle graphics in a Tk window.
