@@ -128,7 +128,10 @@ the modern themed widget set and API::
    from tkinter import *
    from tkinter import ttk
 
-Other modules that provide Tk support include:
+The modules that provide Tk support include:
+
+:mod:`tkinter`
+   Main Tkinter module.
 
 :mod:`tkinter.colorchooser`
    Dialog to let the user choose a color.
