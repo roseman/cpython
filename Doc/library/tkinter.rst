@@ -485,76 +485,72 @@ Handy Reference
 ---------------
 
 
+
 Classes
 ^^^^^^^
 
 
-**Widget Classes:**
-    .. class:: Canvas
-               Listbox
-               Menu
-               Text
-               Toplevel
-
-      *Classic widgets without themed (ttk) variations.*
+Classic widgets without themed (ttk) variations:
+    | *class* tkinter.\ **Canvas**
+    | *class* tkinter.\ **Listbox**
+    | *class* tkinter.\ **Menu**
+    | *class* tkinter.\ **Text**
+    | *class* tkinter.\ **Toplevel**
 
 
-    .. class:: tkinter.ttk.Button
-               tkinter.ttk.Checkbutton
-               tkinter.ttk.Combobox
-               tkinter.ttk.Entry
-               tkinter.ttk.Frame
-               tkinter.ttk.Label
-               tkinter.ttk.Labelframe
-               tkinter.ttk.OptionMenu
-               tkinter.ttk.Menubutton
-               tkinter.ttk.Notebook
-               tkinter.ttk.Panedwindow
-               tkinter.ttk.Progressbar
-               tkinter.ttk.Radiobutton
-               tkinter.ttk.Scale
-               tkinter.ttk.Scrollbar
-               tkinter.ttk.Separator
-               tkinter.ttk.Sizegrip
-               tkinter.ttk.Spinbox
-               tkinter.ttk.Treeview
-               tkinter.ttk.Widget
-
-      *Themed widgets.*
-
-
-    .. class:: Button
-               Checkbutton
-               Frame
-               Label
-               Labelframe
-               Menubutton
-               Message
-               PanedWindow
-               Radiobutton
-               Scale
-               Scrollbar
-               Spinbox
-
-      *Older classic widgets with themed (ttk) replacements.*
+Themed widgets:
+    | *class* tkinter.ttk.\ **Button**
+    | *class* tkinter.ttk.\ **Checkbutton**
+    | *class* tkinter.ttk.\ **Combobox**
+    | *class* tkinter.ttk.\ **Entry**
+    | *class* tkinter.ttk.\ **Frame**
+    | *class* tkinter.ttk.\ **Label**
+    | *class* tkinter.ttk.\ **Labelframe**
+    | *class* tkinter.ttk.\ **OptionMenu**
+    | *class* tkinter.ttk.\ **Menubutton**
+    | *class* tkinter.ttk.\ **Notebook**
+    | *class* tkinter.ttk.\ **Panedwindow**
+    | *class* tkinter.ttk.\ **Progressbar**
+    | *class* tkinter.ttk.\ **Radiobutton**
+    | *class* tkinter.ttk.\ **Scale**
+    | *class* tkinter.ttk.\ **Scrollbar**
+    | *class* tkinter.ttk.\ **Separator**
+    | *class* tkinter.ttk.\ **Sizegrip**
+    | *class* tkinter.ttk.\ **Spinbox**
+    | *class* tkinter.ttk.\ **Treeview**
+    | *class* tkinter.ttk.\ **Widget**
 
 
+Older classic widgets with themed (ttk) replacements:
+    | *class* tkinter.\ **Button**
+    | *class* tkinter.\ **Checkbutton**
+    | *class* tkinter.\ **Frame**
+    | *class* tkinter.\ **Label**
+    | *class* tkinter.\ **Labelframe**
+    | *class* tkinter.\ **Menubutton**
+    | *class* tkinter.\ **Message**
+    | *class* tkinter.\ **PanedWindow**
+    | *class* tkinter.\ **Radiobutton**
+    | *class* tkinter.\ **Scale**
+    | *class* tkinter.\ **Scrollbar**
+    | *class* tkinter.\ **Spinbox**
 
-**Other Classes:**
-  .. class:: Tk
-             BooleanVar
-             DoubleVar
-             IntVar
-             StringVar
-             Variable
-             Event
-             EventType
-             Widget
-             Image
-             PhotoImage
-             BitmapImage
-             tkinter.font.Font
-             :noindex:
+
+Utility and other non-widget classes:
+   | *class* tkinter.\ **Tk**
+   | *class* tkinter.\ **BooleanVar**
+   | *class* tkinter.\ **DoubleVar**
+   | *class* tkinter.\ **IntVar**
+   | *class* tkinter.\ **StringVar**
+   | *class* tkinter.\ **Variable**
+   | *class* tkinter.\ **Event**
+   | *class* tkinter.\ **EventType**
+   | *class* tkinter.\ **Widget**
+   | *class* tkinter.\ **Image**
+   | *class* tkinter.\ **PhotoImage**
+   | *class* tkinter.\ **BitmapImage**
+   | *class* tkinter.font.\ **Font**
+
 
 
 Common Widget Methods
