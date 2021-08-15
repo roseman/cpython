@@ -485,6 +485,337 @@ Handy Reference
 ---------------
 
 
+Classes
+^^^^^^^
+
+
+**Widget Classes:**
+    .. class:: Canvas
+               Listbox
+               Menu
+               Text
+               Toplevel
+
+      *Classic widgets without themed (ttk) variations.*
+
+
+    .. class:: tkinter.ttk.Button
+               tkinter.ttk.Checkbutton
+               tkinter.ttk.Combobox
+               tkinter.ttk.Entry
+               tkinter.ttk.Frame
+               tkinter.ttk.Label
+               tkinter.ttk.Labelframe
+               tkinter.ttk.OptionMenu
+               tkinter.ttk.Menubutton
+               tkinter.ttk.Notebook
+               tkinter.ttk.Panedwindow
+               tkinter.ttk.Progressbar
+               tkinter.ttk.Radiobutton
+               tkinter.ttk.Scale
+               tkinter.ttk.Scrollbar
+               tkinter.ttk.Separator
+               tkinter.ttk.Sizegrip
+               tkinter.ttk.Spinbox
+               tkinter.ttk.Treeview
+               tkinter.ttk.Widget
+
+      *Themed widgets.*
+
+
+    .. class:: Button
+               Checkbutton
+               Frame
+               Label
+               Labelframe
+               Menubutton
+               Message
+               PanedWindow
+               Radiobutton
+               Scale
+               Scrollbar
+               Spinbox
+
+      *Older classic widgets with themed (ttk) replacements.*
+
+
+
+**Other Classes:**
+  .. class:: Tk
+             BooleanVar
+             DoubleVar
+             IntVar
+             StringVar
+             Variable
+             Event
+             EventType
+             Widget
+             Image
+             PhotoImage
+             BitmapImage
+             tkinter.font.Font
+             :noindex:
+
+
+Common Widget Methods
+^^^^^^^^^^^^^^^^^^^^^
+
+Core:
+  | :meth:`cget`
+  | :meth:`configure`
+  | :meth:`destroy`
+  | :meth:`lift`
+  | :meth:`lower`
+
+
+Geometry Management:
+  | :meth:`grid`
+  | :meth:`grid_anchor`
+  | :meth:`grid_bbox`
+  | :meth:`grid_columnconfigure`
+  | :meth:`grid_location`
+  | :meth:`grid_propagate`
+  | :meth:`grid_rowconfigure`
+  | :meth:`grid_size`
+  | :meth:`grid_slaves`
+
+
+Events:
+  | :meth:`bind`
+  | :meth:`bind_all`
+  | :meth:`bind_class`
+  | :meth:`bindtags`
+  |
+  | :meth:`focus`
+  | :meth:`focus_displayof`
+  | :meth:`focus_force`
+  | :meth:`focus_get`
+  | :meth:`focus_lastfor`
+  | :meth:`focus_set`
+  |
+  | :meth:`grab_current`
+  | :meth:`grab_release`
+  | :meth:`grab_set`
+  | :meth:`grab_set_global`
+  | :meth:`grab_status`
+
+
+
+Widget Information:
+  | :meth:`winfo_atom`
+  | :meth:`winfo_atomname`
+  | :meth:`winfo_cells`
+  | :meth:`winfo_children`
+  | :meth:`winfo_class`
+  | :meth:`winfo_colormapfull`
+  | :meth:`winfo_containing`
+  | :meth:`winfo_depth`
+  | :meth:`winfo_exists`
+  | :meth:`winfo_fpixels`
+  | :meth:`winfo_geometry`
+  | :meth:`winfo_height`
+  | :meth:`winfo_id`
+  | :meth:`winfo_interps`
+  | :meth:`winfo_ismapped`
+  | :meth:`winfo_manager`
+  | :meth:`winfo_name`
+  | :meth:`winfo_parent`
+  | :meth:`winfo_pathname`
+  | :meth:`winfo_pixels`
+  | :meth:`winfo_pointerx`
+  | :meth:`winfo_pointerxy`
+  | :meth:`winfo_pointery`
+  | :meth:`winfo_reqheight`
+  | :meth:`winfo_reqwidth`
+  | :meth:`winfo_rgb`
+  | :meth:`winfo_rootx`
+  | :meth:`winfo_rooty`
+  | :meth:`winfo_screen`
+  | :meth:`winfo_screencells`
+  | :meth:`winfo_screendepth`
+  | :meth:`winfo_screenheight`
+  | :meth:`winfo_screenmmheight`
+  | :meth:`winfo_screenmmwidth`
+  | :meth:`winfo_screenvisual`
+  | :meth:`winfo_screenwidth`
+  | :meth:`winfo_server`
+  | :meth:`winfo_toplevel`
+  | :meth:`winfo_viewable`
+  | :meth:`winfo_visual`
+  | :meth:`winfo_visualid`
+  | :meth:`winfo_visualsavailable`
+  | :meth:`winfo_vrootheight`
+  | :meth:`winfo_vrootwidth`
+  | :meth:`winfo_vrootx`
+  | :meth:`winfo_vrooty`
+  | :meth:`winfo_width`
+  | :meth:`winfo_x`
+  | :meth:`winfo_y`
+
+
+Toplevel Widgets:
+  | :meth:`wm_aspect`
+  | :meth:`wm_attributes`
+  | :meth:`wm_client`
+  | :meth:`wm_colormapwindows`
+  | :meth:`wm_command`
+  | :meth:`wm_deiconify`
+  | :meth:`wm_focusmodel`
+  | :meth:`wm_forget`
+  | :meth:`wm_frame`
+  | :meth:`wm_geometry`
+  | :meth:`wm_grid`
+  | :meth:`wm_group`
+  | :meth:`wm_iconbitmap`
+  | :meth:`wm_iconify`
+  | :meth:`wm_iconmask`
+  | :meth:`wm_iconname`
+  | :meth:`wm_iconphoto`
+  | :meth:`wm_iconposition`
+  | :meth:`wm_iconwindow`
+  | :meth:`wm_manage`
+  | :meth:`wm_maxsize`
+  | :meth:`wm_minsize`
+  | :meth:`wm_overrideredirect`
+  | :meth:`wm_positionfrom`
+  | :meth:`wm_protocol`
+  | :meth:`wm_resizable`
+  | :meth:`wm_sizefrom`
+  | :meth:`wm_state`
+  | :meth:`wm_title`
+  | :meth:`wm_transient`
+  | :meth:`wm_withdraw`
+
+
+
+Non-Widget Specific
+
+after
+after_cancel
+after_idle
+bell
+clipboard_append
+clipboard_clear
+clipboard_get
+event_add
+event_delete
+event_generate
+event_info
+getboolean
+getdouble
+getint
+getvar
+mainloop
+
+
+
+
+
+
+Aliases
+
+anchor
+aspect
+attributes
+bbox
+children
+client
+colormapwindows
+columnconfigure
+command
+config
+deiconify
+deletecommand
+focusmodel
+forget
+frame
+geometry
+
+group
+iconbitmap
+iconify
+iconmask
+iconname
+iconphoto
+iconposition
+iconwindow
+image_names
+image_types
+keys
+loadtk
+manage
+master
+maxsize
+minsize
+nametowidget
+option_add
+option_clear
+option_get
+option_readfile
+overrideredirect
+pack_propagate
+pack_slaves
+place_slaves
+positionfrom
+propagate
+protocol
+quit
+readprofile
+register
+report_callback_exception
+resizable
+rowconfigure
+selection_clear
+selection_get
+selection_handle
+selection_own
+selection_own_get
+send
+setvar
+size
+sizefrom
+slaves
+state
+title
+tk
+tk_bisque
+tk_focusFollowsMouse
+tk_focusNext
+tk_focusPrev
+tk_setPalette
+tk_strictMotif
+tkraise
+transient
+unbind
+unbind_all
+unbind_class
+update
+update_idletasks
+wait_variable
+wait_visibility
+wait_window
+waitvar
+
+withdraw
+
+
+
+Main
+
+
+Geometry Management
+
+
+Event
+
+
+
+
+
+
+
+
+
 .. _tkinter-setting-options:
 
 Setting Options
