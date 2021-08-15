@@ -487,13 +487,12 @@ Classes
 
 
 **Widget Classes:**
-    .. class:: Canvas
-               Listbox
-               Menu
-               Text
-               Toplevel
-
-      *Classic widgets without themed (ttk) variations.*
+    | *class* tkinter.\ **Canvas**
+    | *class* tkinter.\ **Listbox**
+    | *class* tkinter.\ **Menu**
+    | *class* tkinter.\ **Text**
+    | *class* tkinter.\ **Toplevel**
+    |    *Classic widgets without themed (ttk) variations.*
 
 
     .. class:: tkinter.ttk.Button
